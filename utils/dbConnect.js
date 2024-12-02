@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
+require("dotenv").config()
 const dbConnect = async () => {
     if (mongoose.connection.readyState >= 1) {
         return;
     }
     try {
-        await mongoose.connect("mongodb://admin:Skcindia%402023@191.101.229.91:27017/?authMechanism=DEFAULT", {
+        await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
