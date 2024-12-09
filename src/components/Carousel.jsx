@@ -8,7 +8,7 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="https://cdn.foxlo.in/skc/9TH.jpg"
+              src="/img/temp/9TH.jpg"
               alt=""
             />
           </div>
@@ -20,7 +20,7 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="https://cdn.foxlo.in/skc/11TH.jpg"
+              src="/img/temp/11TH.jpg"
               alt="Pizza"
             />
           </div>
@@ -29,7 +29,16 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="https://cdn.foxlo.in/skc/THIRD.jpg"
+              src="/img/temp/THIRD.jpg"
+              alt="Pizza"
+            />
+          
+          </div>
+
+          <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
+            <img
+              className="object-cover w-full h-full"
+              src="/img/temp/10TH.jpg"
               alt="Pizza"
             />
           

@@ -112,7 +112,7 @@ export default function About() {
                                         className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                                         <div className="relative">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/imagee%201.jpg"
+                                                src="/img/temp/imagee 1.jpg"
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -123,7 +123,7 @@ export default function About() {
                                     <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                                         <div className="relative">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/image%202.jpg"
+                                                src="/img/temp/image 2.jpg"
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -132,7 +132,7 @@ export default function About() {
                                         </div>
                                         <div className="relative">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/IMAGE%203.jpg"
+                                                src="/img/temp/IMAGE 3.jpg"
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -143,7 +143,7 @@ export default function About() {
                                     <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                                         <div className="relative">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/IMAGE%204.jpg"
+                                                src="/img/temp/IMAGE 4.jpg"
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -152,7 +152,7 @@ export default function About() {
                                         </div>
                                         <div className="relative">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/IMAGE%205.jpg"
+                                                src="/img/temp/IMAGE 5.jpg"
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -224,7 +224,7 @@ export default function About() {
                 {/* Image section */}
                 <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
                     <img
-                        src="https://cdn.foxlo.in/skc/FIRST%20IMAGE.jpg"
+                        src="/img/temp/FIRST IMAGE.jpg"
                         alt=""
                         className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
                     />

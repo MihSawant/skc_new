@@ -182,8 +182,8 @@ export default function Home2() {
                                 <AnimationOnScroll animateIn="animate__fadeInUp">
                                     <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                                         <img
-                                            src="https://cdn.foxlo.in/skc/FIRST%20IMAGE.jpg"
-                                            alt="About-Image"
+                                            src="/img/temp/FIRST IMAGE.jpg"
+                                            alt="About-Image-1"
                                             className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                                         />
                                     </div>
@@ -193,8 +193,8 @@ export default function Home2() {
                                     <AnimationOnScroll animateIn="animate__fadeInUp">
                                         <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/8TH.jpg"
-                                                alt="About-Image"
+                                                src="/img/temp/8TH.jpg"
+                                                alt="About-Image-2"
                                                 className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                                             />
                                         </div>
@@ -202,8 +202,8 @@ export default function Home2() {
                                     <AnimationOnScroll animateIn="animate__fadeInUp">
                                         <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/6TH.jpg"
-                                                alt="About-Image"
+                                                src="/img/temp/6TH.jpg"
+                                                alt="About-Image-3"
                                                 className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                                             />
                                         </div>
@@ -211,8 +211,8 @@ export default function Home2() {
                                     <AnimationOnScroll animateIn="animate__fadeInUp">
                                         <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                                             <img
-                                                src="https://cdn.foxlo.in/skc/SECONG%20IMAGE.jpg"
-                                                alt="About-Image"
+                                                src="/img/temp/SECONG IMAGE.jpg"
+                                                alt="About-Image-34"
                                                 className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                                             />
                                         </div>
