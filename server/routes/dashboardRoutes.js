@@ -29,5 +29,9 @@ router.post("/leader/addimage", upload.single('leader'), (req, res, next) =>{
        "file" : req.file.originalname
    })
 });
-
+router.post("/aboutImages/addimage", upload.single('leader'), (req, res, next) =>{
+    return res.json({
+        "file" : req.file.originalname
+    })
+ });
 module.exports = router;

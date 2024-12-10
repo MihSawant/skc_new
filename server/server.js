@@ -27,6 +27,7 @@ const quotes = require('./routes/quotesRoute');
 const faq = require('./routes/faqRoutes');
 const leaders = require('./routes/leaderRoute');
 const jwt = require("express-jwt");
+const aboutImages = require("./routes/aboutUsImages");
 
 app.prepare().then(async () => {
     const server = express();
@@ -120,6 +121,7 @@ app.prepare().then(async () => {
     server.use('/api/dashboard', dashboard);
     server.use('/api/faq', faq);
     server.use('/api/leaders', leaders);
+    server.use('/api/aboutImages',aboutImages);
     // analytics
 
     server.get('/va/counts', async (req, res) => {
