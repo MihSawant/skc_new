@@ -28,7 +28,8 @@ const faq = require('./routes/faqRoutes');
 const leaders = require('./routes/leaderRoute');
 const jwt = require("express-jwt");
 const aboutImages = require("./routes/aboutUsImages");
-
+const homeaboutImages = require("./routes/homeaboutUsImages");
+const carouselImages = require("./routes/carouselRoutes")
 app.prepare().then(async () => {
     const server = express();
     await dbConnect()
@@ -122,6 +123,8 @@ app.prepare().then(async () => {
     server.use('/api/faq', faq);
     server.use('/api/leaders', leaders);
     server.use('/api/aboutImages',aboutImages);
+    server.use('/api/homeaboutImages',homeaboutImages);
+    server.use("/api/carouselImages", carouselImages);
     // analytics
 
     server.get('/va/counts', async (req, res) => {

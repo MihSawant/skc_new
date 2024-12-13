@@ -14,6 +14,8 @@ import {NextUIProvider} from "@nextui-org/react";
 
 export default function Home2() {
     const [about, setaboutus] = useState();
+    const [aboutImages, setAboutImages] = useState([]);
+
     const [features, set_features] = useState([]);
     useEffect(() => {
         const options = {
@@ -32,6 +34,23 @@ export default function Home2() {
         });
 
     }, []);
+
+    useEffect(() => {
+        fetchAboutImages();
+    }, []);
+
+    function fetchAboutImages(){
+            axios.get("/api/homeaboutImages/all")
+                .then(resp => {
+                    console.log("resp", resp);
+                    const images = resp.data.map(item => item.imageUrl);
+                    console.log(images);
+                    
+                    setAboutImages(images);
+                    
+                })
+                .catch(err => console.error(err));
+    }
 
 
     return (
@@ -182,7 +201,8 @@ export default function Home2() {
                                 <AnimationOnScroll animateIn="animate__fadeInUp">
                                     <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                                         <img
-                                            src="/img/temp/FIRST IMAGE.jpg"
+                                            // src="/img/temp/FIRST IMAGE.jpg"
+                                            src={aboutImages.at(0)}
                                             alt="About-Image-1"
                                             className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                                         />
@@ -193,7 +213,8 @@ export default function Home2() {
                                     <AnimationOnScroll animateIn="animate__fadeInUp">
                                         <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                                             <img
-                                                src="/img/temp/8TH.jpg"
+                                                // src="/img/temp/8TH.jpg"
+                                                src={aboutImages.at(1)}
                                                 alt="About-Image-2"
                                                 className="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                                             />
@@ -202,7 +223,8 @@ export default function Home2() {
                                     <AnimationOnScroll animateIn="animate__fadeInUp">
                                         <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                                             <img
-                                                src="/img/temp/6TH.jpg"
+                                                // src="/img/temp/6TH.jpg"
+                                                src={aboutImages.at(2)}
                                                 alt="About-Image-3"
                                                 className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                                             />
@@ -211,7 +233,8 @@ export default function Home2() {
                                     <AnimationOnScroll animateIn="animate__fadeInUp">
                                         <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                                             <img
-                                                src="/img/temp/SECONG IMAGE.jpg"
+                                                // src="/img/temp/SECONG IMAGE.jpg"
+                                                src={aboutImages.at(3)}
                                                 alt="About-Image-34"
                                                 className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                                             />

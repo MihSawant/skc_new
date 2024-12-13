@@ -247,7 +247,8 @@ export default function About() {
                 {/* Image section */}
                 <div className="mt-32 sm:mt-40 xl:mx-auto xl:max-w-7xl xl:px-8">
                     <img
-                        src="/img/temp/FIRST IMAGE.jpg"
+                        // src="/img/temp/FIRST IMAGE.jpg"
+                        src={aboutImages.at(5)}
                         alt=""
                         className="aspect-[5/2] w-full object-cover xl:rounded-3xl"
                     />

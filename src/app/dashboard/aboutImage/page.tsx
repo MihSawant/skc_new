@@ -5,6 +5,7 @@ import DashboardHeader from "@/components/Dashboard/header";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {log} from "node:util";
+import { toast } from "react-toastify";
 
 export default function AboutImagesUpdatePage(){
 
@@ -169,9 +170,10 @@ export default function AboutImagesUpdatePage(){
                                 />
                             </div> */}
                             <button
-                                onClick={event => {
+                                onClick={async(event) => {
                                     updateLeader(e);
-                                    fetchLeaders();
+                                    await toast.success("Image Upload is successfull");
+                                    // fetchLeaders();
                                 }
                                 }
                                 type="button"

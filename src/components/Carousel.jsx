@@ -1,4 +1,23 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 export default function Carousel() {
+  const [aboutImages, setAboutImages] = useState([]);
+  useEffect(() => {
+    fetchAboutImages();
+}, []);
+
+function fetchAboutImages(){
+        axios.get("/api/carouselImages/all")
+            .then(resp => {
+                console.log("resp", resp);
+                const images = resp.data.map(item => item.imageUrl);
+                console.log(images);
+                
+                setAboutImages(images);
+                
+            })
+            .catch(err => console.error(err));
+}
     return (
       <div className="w-full mb-16">
         {/* Carousel container */}
@@ -8,7 +27,8 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="/img/temp/9TH.jpg"
+              // src="/img/temp/9TH.jpg"
+              src={aboutImages.at(0)}
               alt=""
             />
           </div>
@@ -20,7 +40,8 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="/img/temp/11TH.jpg"
+              // src="/img/temp/11TH.jpg"
+              src={aboutImages.at(1)}
               alt="Pizza"
             />
           </div>
@@ -29,7 +50,8 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="/img/temp/THIRD.jpg"
+              // src="/img/temp/THIRD.jpg"
+              src={aboutImages.at(2)}
               alt="Pizza"
             />
           
@@ -38,7 +60,8 @@ export default function Carousel() {
           <div className="carousel-item flex-shrink-0 w-full sm:w-[500px]">
             <img
               className="object-cover w-full h-full"
-              src="/img/temp/10TH.jpg"
+              // src="/img/temp/10TH.jpg"
+              src={aboutImages.at(3)}
               alt="Pizza"
             />
           
