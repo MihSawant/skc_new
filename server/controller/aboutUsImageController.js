@@ -3,6 +3,8 @@ const AboutUsImageModel = require("../../models/aboutUsImageModel")
 module.exports = {
     list: async function (req, res) {
         const all = await AboutUsImageModel.find({})
+        console.log("all", all);
+        
         return res.json(all);
 
     },
@@ -21,7 +23,7 @@ module.exports = {
             aboutUs.imageUrl = req.body.imageUrl ? req.body.imageUrl : aboutUs.imageUrl
 
             await AboutUsImageModel.updateOne({_id: id },aboutUs).exec()
-            return res.json(leader);
+            return res.json(aboutUs);
         } else {
             // create
             return res.status(400).json({ "message": "Error" })

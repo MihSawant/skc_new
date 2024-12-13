@@ -21,19 +21,21 @@ export default function AboutImagesUpdatePage(){
     function fetchLeaders(){
             axios.get("/api/aboutImages/all")
                 .then(resp => {
+                    console.log("resp", resp);
+                    
                     setaboutUs
                     (resp.data);
                 })
                 .catch(err => console.error(err));
     }
 
-    function updateChangeName(toUpdate: string, leader : object){
-        return {...leader, name: toUpdate}
-    }
+    // function updateChangeName(toUpdate: string, leader : object){
+    //     return {...leader, name: toUpdate}
+    // }
 
-    function updateChangeRole(toUpdate: string, leader: object){
-        return {... leader, role: toUpdate};
-    }
+    // function updateChangeRole(toUpdate: string, leader: object){
+    //     return {... leader, role: toUpdate};
+    // }
 
     function updateChangeImg(toUpdate: string, leader: object){
         console.log(leader, toUpdate)
@@ -47,7 +49,7 @@ export default function AboutImagesUpdatePage(){
         form.append("leader", file);
         const options = {
             method: 'POST',
-            url: '/api/dashboard/leader/addimage',
+            url: '/api/dashboard/aboutImages/addimage',
             headers: {
                 'Content-Type': 'multipart/form-data;',
             },
@@ -55,8 +57,8 @@ export default function AboutImagesUpdatePage(){
         };
 
          return axios.request(options).then(resp => {
-             const url = "/assets/img/leaders/"+resp.data.file;
-             return "/assets/img/leaders/"+resp.data.file;
+             const url = "/assets/img/about/"+resp.data.file;
+             return "/assets/img/about/"+resp.data.file;
         })
             .catch(err => console.error(err));
     }
@@ -66,6 +68,9 @@ export default function AboutImagesUpdatePage(){
         const data =  {
             imageUrl: aboutUsImage.imageUrl
         }
+
+        console.log(aboutUsImage);
+        
 
         console.log(data);
 
@@ -117,7 +122,7 @@ export default function AboutImagesUpdatePage(){
                             {/*<h3 className="mt-8 font-display text-xl font-bold tracking-tight text-slate-900">*/}
                             {/*    {e.name}*/}
                             {/*</h3>*/}
-                            <div className="mt-2">
+                            {/* <div className="mt-2">
                                 <input
                                     type="text"
                                     onChange={event => {
@@ -139,8 +144,8 @@ export default function AboutImagesUpdatePage(){
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Leader Name"
                                 />
-                            </div>
-                            <div className="mt-2">
+                            </div> */}
+                            {/* <div className="mt-2">
                                 <input
                                     type="text"
                                     value={
@@ -162,7 +167,7 @@ export default function AboutImagesUpdatePage(){
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Leader Role"
                                 />
-                            </div>
+                            </div> */}
                             <button
                                 onClick={event => {
                                     updateLeader(e);

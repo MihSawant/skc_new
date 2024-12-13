@@ -15,6 +15,7 @@ const AnimatedNumbers = dynamic(() => import("react-animated-numbers"), {
 });
 export default function About() {
 
+    const [aboutImages, setAboutImages] = useState([]);
     let [stats, setstats] = useState([
         {label: 'Established in 2010', value: new Date().getFullYear() - 2010 + "+ Years in Business"},
         {label: 'States', value: '15+'},
@@ -46,6 +47,23 @@ export default function About() {
             console.error(error);
         });
     }, [])
+
+    useEffect(() => {
+        fetchAboutImages();
+    }, []);
+
+    function fetchAboutImages(){
+            axios.get("/api/aboutImages/all")
+                .then(resp => {
+                    console.log("resp", resp);
+                    const images = resp.data.map(item => item.imageUrl);
+                    console.log(images);
+                    
+                    setAboutImages(images);
+                    
+                })
+                .catch(err => console.error(err));
+    }
 
     const [num, setNum] = React.useState(331231);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -112,7 +130,8 @@ export default function About() {
                                         className="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                                         <div className="relative">
                                             <img
-                                                src="/img/temp/imagee 1.jpg"
+                                                // src="/img/temp/imagee 1.jpg"
+                                                src={aboutImages.at(0)}
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -123,7 +142,8 @@ export default function About() {
                                     <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                                         <div className="relative">
                                             <img
-                                                src="/img/temp/image 2.jpg"
+                                                // src="/img/temp/image 2.jpg"
+                                                src={aboutImages.at(1)}
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -132,7 +152,8 @@ export default function About() {
                                         </div>
                                         <div className="relative">
                                             <img
-                                                src="/img/temp/IMAGE 3.jpg"
+                                                // src="/img/temp/IMAGE 3.jpg"
+                                                src={aboutImages.at(2)}
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -143,7 +164,8 @@ export default function About() {
                                     <div className="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                                         <div className="relative">
                                             <img
-                                                src="/img/temp/IMAGE 4.jpg"
+                                                // src="/img/temp/IMAGE 4.jpg"
+                                                src={aboutImages.at(3)}
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
@@ -152,7 +174,8 @@ export default function About() {
                                         </div>
                                         <div className="relative">
                                             <img
-                                                src="/img/temp/IMAGE 5.jpg"
+                                                // src="/img/temp/IMAGE 5.jpg"
+                                                src={aboutImages.at(4)}
                                                 alt=""
                                                 className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                                             />
