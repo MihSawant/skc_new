@@ -1,7 +1,7 @@
 const express = require('express');
 const next = require('next');
 const dbConnect = require("../utils/dbConnect");
-
+const cors = require('cors');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
 const handle = app.getRequestHandler();
@@ -32,6 +32,9 @@ const homeaboutImages = require("./routes/homeaboutUsImages");
 const carouselImages = require("./routes/carouselRoutes")
 app.prepare().then(async () => {
     const server = express();
+    server.use(cors({
+        origin: ['http://localhost:3000', 'https://shrikrishnacommercial.com']
+    }));
     await dbConnect()
     server.use(json())
     server.post('/va', async (req, res) => {

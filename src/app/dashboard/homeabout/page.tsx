@@ -59,7 +59,7 @@ export default function HomeAboutImagesUpdatePage(){
 
          return axios.request(options).then(resp => {
              const url = "/assets/img/home-about/"+resp.data.file;
-             return "/assets/img/home-about/"+resp.data.file;
+             return url
         })
             .catch(err => console.error(err));
     }
